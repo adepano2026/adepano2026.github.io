@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap"
+		rel="stylesheet"
+	/>
+	<style>
+		* div {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Barlow Condensed', sans-serif;
+			padding: 10px;
+			background: #f1f1f1;
+		}
+
+		.header {
+			padding: 5px;
+			text-align: center;
+			background: #f5f5f5;
+			width: 100%;
+			height: 300px;
+			background-color: #ffb8c2;
+			animation-name: example;
+			animation-duration: 60s;
+			font-family: 'Sacramento', cursive;
+		}
+
+		.header h1 {
+			color: #f5f5f5;
+		}
+		.header p {
+			color: #f5f5f5;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
+			color: #121212;
+		}
+
+		@keyframes example {
+			0% {
+				background-color: #ffd2aa;
+			}
+			25% {
+				background-color: #ffb8c2;
+			}
+			50% {
+				background-color: #c9c1e0;
+			}
+			100% {
+				background-color: #b4d2f0;
+			}
+		}
+		.header h1 {
+			font-size: 80px;
+		}
+
+		.header p {
+			font-family: 'IM Fell DW Pica', serif;
+			font-size: 25px;
+		}
+
+		.topnav {
+			overflow: hidden;
+			background-color: white;
+		}
+
+		.topnav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.topnav li {
+			float: left;
+		}
+
+		.topnav li a,
+		.dropbtn {
+			display: block;
+			color: #bf4e83;
+			text-align: left;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.active {
+			background-color: #71bbd9;
+			color: white !important;
+			cursor: pointer;
+		}
+
+		.dropdown {
+			float: left;
+			overflow: hidden;
+		}
+
+		.dropdown .dropbtn {
+			font-size: 16px;
+			border: none;
+			outline: none;
+			color: #bf4e83;
+			padding: 14px 16px;
+			background-color: inherit;
+			font-family: inherit;
+			margin: 0;
+		}
+
+		.topnav li a:hover,
+		.dropdown:hover .dropbtn {
+			background-color: #71bbd9;
+			color: white;
+			cursor: pointer;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			float: none;
+			color: #bf4e83;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #71bbd9;
+			color: #f5f5f5;
+			cursor: pointer;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0, 0, 0); /* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #f5f5f5;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+
+		/* Modal Header */
+		.modal-header {
+			padding: 2px 16px;
+			background-color: #bf4e83;
+			color: #f5f5f5;
+		}
+
+		/* Modal Body */
+		.modal-body {
+			padding: 2px 16px;
+			text-align: center;
+		}
+
+		/* The Close Button */
+		.close {
+			color: #f5f5f5;
+			float: right;
+			margin-top: 15px;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.leftcolumn {
+			float: left;
+			width: 74%;
+		}
+
+		.rightcolumn {
+			float: right;
+			width: 25%;
+			min-height: calc(100vh - 300px);
+			background: #fcd9dd;
+			padding: 0 0 0 20px;
+		}
+
+		.fakeimg {
+			background-color: #aaa;
+			width: 100%;
+			padding: 20px;
+		}
+
+		.card {
+			background-color: white;
+			margin-top: 20px;
+		}
+
+		.card h2 {
+			padding: 40px 20px 0 20px;
+			font-size: 35px;
+		}
+
+		.card p {
+			padding: 30px 50px;
+			text-align: center;
+		}
+
+		.card img {
+			width: 100%;
+		}
+
+		.card2 {
+			background-color: white;
+			margin: 30px 20px 20px 0;
+			text-align: center;
+		}
+
+		.card2 h2 {
+			padding: 40px 25px 0 25px;
+		}
+
+		.card2 img {
+			width: 90%;
+		}
+
+		.row:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.footer {
+			padding: 20px;
+			text-align: center;
+			background: white;
+		}
+
+		.footer h5 {
+			color: #bf4e83;
+		}
+
+		@media screen and (max-width: 800px) {
+			.leftcolumn,
+			.rightcolumn {
+				width: 100%;
+				padding: 0;
+			}
+		}
+
+		@media screen and (max-width: 400px) {
+			.topnav a {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.spotifyCss {
+			border-radius: 12px;
+		}
+	</style>
+	<body>
+		<div class="header">
+			<h1>Taylor Swift</h1>
+			<p>...Ready for it?</p>
+		</div>
+
+		<div class="topnav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="dropdown">
+					<a class="dropbtn">
+						Albums
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="#" id="taylorSwift">Taylor Swift</a>
+						<a href="#" id="fearless">Fearless</a>
+						<a href="#" id="speakNow">Speak Now</a>
+						<a href="#" id="red">Red</a>
+						<a href="#" id="album1989">1989</a>
+						<a href="#" id="reputation">Reputation</a>
+						<a href="#" id="lover">Lover</a>
+						<a href="#" id="folklore">Folklore</a>
+						<a href="#" id="evermore">Evermore</a>
+						<a href="#" id="midnights">Midnights</a>
+					</div>
+				</li>
+				<li><a href="#" class="active">Awards</a></li>
+				<li><a href="life.html">Life</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn">
+				<div class="card">
+					<h2>Awards</h2>
+					<p>
+						<strong
+							>MTV Video Music Award for Video of the Year</strong
+						><br />
+						2022, 2019, 2015 · All Too Well (10 minute version)
+						(Taylor's version) (from The Vault), You Need to Calm
+						Down, Bad Blood
+						<br /><br />
+
+						<strong>Grammy Award for Album of the Year</strong
+						><br />
+						2021, 2016, 2010 · Folklore, 1989, Fearless
+						<br /><br />
+
+						<strong> Grammy Award for Best Music Video </strong
+						><br />
+						2016 · Bad Blood
+						<br /><br />
+
+						<strong
+							>American Music Award for Artist of the Year</strong
+						><br />
+						2020, 2019, 2018
+						<br /><br />
+
+						<strong> Grammy Award for Best Pop Vocal Album </strong
+						><br />
+						2016 · 1989
+						<br /><br />
+
+						<strong>
+							Billboard Music Award for Top Female Artist </strong
+						><br />
+						2021, 2018, 2015
+						<br /><br />
+
+						<strong
+							>Grammy Award for Best Song Written for Visual
+							Media</strong
+						><br />
+						2013 · Safe & Sound
+						<br /><br />
+
+						<strong>Grammy Award for Best Country Song</strong
+						><br />
+						2012, 2010 · Mean, White Horse
+						<br /><br />
+
+						<strong>Billboard Music Award for Top Artist</strong
+						><br />
+						2015, 2013, 2009
+						<br /><br />
+
+						<strong
+							>MTV Video Music Award for Best Visual
+							Effects</strong
+						><br />
+						2019 · ME!
+						<br /><br />
+
+						<strong>MTV Europe Music Award for Best Song</strong
+						><br />
+						2015 · Bad Blood
+						<br /><br />
+
+						<strong>Grammy Award for Best Country Album</strong
+						><br />
+						2010 · Fearless
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for Entertainer of
+							the Year</strong
+						><br />
+						2011, 2009
+						<br /><br />
+
+						<strong>MTV Video Music Award for Best Pop</strong
+						><br />
+						2015 · Blank Space
+						<br /><br />
+
+						<strong
+							>MTV Video Music Award for Best Female Video</strong
+						><br />
+						2015, 2013, 2009 · Blank Space, I Knew You Were Trouble,
+						You Belong with Me
+						<br /><br />
+
+						<strong>MTV Video Music Award for Best Direction</strong
+						><br />
+						2022, 2020 · All Too Well (10 minute version) (Taylor's
+						version) (from The Vault), The Man
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for Album of the
+							Year</strong
+						><br />
+						2009 · Fearless
+						<br /><br />
+
+						<strong
+							>MTV Video Music Award for Breakthrough Long Form
+							Video</strong
+						><br />
+						2022 · All Too Well: The Short Film
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for Song of the
+							Year</strong
+						><br />
+						2017
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for New Artist of
+							the Year</strong
+						><br />
+						2007
+						<br /><br />
+
+						<strong
+							>MTV Video Music Award for Best
+							Collaboration</strong
+						><br />
+						2017, 2015 · I Don't Wanna Live Forever, Bad Blood
+						<br /><br />
+
+						<strong>Kids' Choice Award for Favorite Song</strong
+						><br />
+						2010 · You Belong with Me
+						<br /><br />
+
+						<strong
+							>Grammy Award for Best Female Country Vocal
+							Performance</strong
+						><br />
+						2010 · White Horse
+						<br /><br />
+
+						<strong
+							>American Music Award for Favorite Pop Album</strong
+						><br />
+						2021, 2019, 2018 · evermore, Lover, reputation
+						<br /><br />
+
+						<strong>MTV Europe Music Award for Best Video</strong
+						><br />
+						2019 · ME!
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for Female Vocalist
+							of the Year</strong
+						><br />
+						2009
+						<br /><br />
+
+						<strong
+							>Grammy Award for Best Country Solo
+							Performance</strong
+						><br />
+						2012 · Mean
+						<br /><br />
+
+						<strong
+							>MTV Video Music Award for Best Video for
+							Good</strong
+						><br />
+						2019 · You Need to Calm Down
+						<br /><br />
+
+						<strong
+							>Billboard Music Award for Top Billboard 200
+							Album</strong
+						><br />
+						2015, 2013 · 1989, Red
+						<br /><br />
+
+						<strong
+							>Danish Music Award for International Album of the
+							Year</strong
+						><br />
+						2020 · Folklore
+						<br /><br />
+
+						<strong
+							>American Music Award for Favorite Female Artist
+							Pop/Rock</strong
+						><br />
+						2021, 2020, 2019
+						<br /><br />
+
+						<strong>iHeartRadio Music Award for Best Lyrics</strong
+						><br />
+						2022, 2015 · All Too Well (10 minute version) (Taylor's
+						version) (from The Vault), Blank Space
+						<br /><br />
+
+						<strong
+							>Academy of Country Music Award for New Female
+							Artist of the Year</strong
+						><br />
+						2008
+						<br /><br />
+
+						<strong
+							>Teen Choice Award for Choice Music - Break-Up
+							Song</strong
+						><br />
+						2015, 2011 · Bad Blood, Back to December
+						<br /><br />
+
+						<strong
+							>Academy of Country Music Award for Video of the
+							Year</strong
+						><br />
+						2014 · Highway Don't Care
+						<br /><br />
+
+						<strong
+							>Country Music Association Award for Music Video of
+							the Year</strong
+						><br />
+						2013, 2009 · Highway Don't Care, Love Story
+						<br /><br />
+
+						<strong
+							>Kids' Choice Award for Favorite Female
+							Artist</strong
+						><br />
+						2010
+						<br /><br />
+
+						<strong
+							>Billboard Music Award for Woman of the Year</strong
+						><br />
+						2014, 2011
+						<br /><br />
+
+						<strong
+							>Teen Choice Award for Choice Movie Breakout Star -
+							Female</strong
+						><br />
+						2010 · Valentine's Day
+						<br /><br />
+
+						<strong>People's Choice Award for Favorite Album</strong
+						><br />
+						2019 · Lover
+						<br /><br />
+
+						<strong
+							>American Music Award for Favorite Country
+							Album</strong
+						><br />
+						2013, 2011, 2009 · Red, Speak Now, Fearless
+						<br /><br />
+
+						<strong
+							>Teen Choice Award for Choice Female Artist</strong
+						><br />
+						2012, 2011, 2009 · Fearless
+						<br /><br />
+
+						<strong
+							>Brit Award for International Female Solo
+							Artist</strong
+						><br />
+						2015
+						<br /><br />
+
+						<strong
+							>Teen Choice Award for Choice Collaboration</strong
+						><br />
+						2015 · Bad Blood
+						<br /><br />
+
+						<strong
+							>Teen Choice Award for Choice Movie: Voice</strong
+						><br />
+						2012 · The Lorax
+						<br /><br />
+
+						<strong>NRJ Music Award for Video of the Year</strong
+						><br />
+						2015 · Bad Blood
+						<br /><br />
+
+						<strong
+							>People's Choice Award for Favorite Female
+							Artist</strong
+						><br />
+						2016, 2015, 2010
+						<br /><br />
+
+						<strong>People's Choice Award for Favorite Song</strong
+						><br />
+						2015 · Shake It Off
+						<br /><br />
+
+						<strong
+							>CMT Music Award for Trending Comeback Song of the
+							Year</strong
+						><br />
+						2022 · Love Story (Taylor's Version)
+						<br /><br />
+
+						<strong
+							>Radio Disney Music Award for Best Breakup
+							Song</strong
+						><br />
+						2016, 2013 · Bad Blood, We Are Never Ever Getting Back
+						Together
+						<br /><br />
+
+						<strong
+							>ARIA Music Award for Best International
+							Artist</strong
+						><br />
+						2021, 2019 · evermore, Lover
+						<br /><br />
+					</p>
+				</div>
+			</div>
+			<div class="rightcolumn">
+				<div class="card2">
+					<h2>Merch Store</h2>
+					<a href="https://store.taylorswift.com/"
+						><img
+							src="ts_merchstore.png"
+							alt="Taylor Swift merch store"
+					/></a>
+
+					<p>.</p>
+				</div>
+				<div class="card2">
+					<h2>Digital Booklet</h2>
+					<a href="https://digital.umusic.com/taylorswiftmidnights"
+						><img
+							src="ts_midnightsbooklet.jpg"
+							alt="Taylor Swift merch store"
+					/></a>
+
+					<p>.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Taylor Swift Album Modal -->
+		<div id="taylorSwiftModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Taylor Swift (Self-titled)</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/5eyZZoQEFQWRHkV2xgAeBw?si=Q10WE6kVT--i2IJW-4nZAQ"
+						><img
+							src="ts_selftitled.png"
+							alt="Taylor Swift (Self-titled) Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/5eyZZoQEFQWRHkV2xgAeBw?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fearless Album Modal -->
+		<div id="fearlessModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Fearless</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2gP2LMVcIFgVczSJqn340t?si=m-I9Of5hTByVL0EQ5PeCLA"
+						><img src="ts_fearless.png" alt="Fearless Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2gP2LMVcIFgVczSJqn340t?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Speak Now Album Modal -->
+		<div id="speakNowModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Speak Now</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/6S6JQWzUrJVcJLK4fi74Fw?si=S22sxdbkRiK3UlL3NFGMdQ"
+						><img src="ts_speaknow.png" alt="Speak Now Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/6S6JQWzUrJVcJLK4fi74Fw?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Red Album Modal -->
+		<div id="redModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Red</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/1KVKqWeRuXsJDLTW0VuD29?si=dbjhGSnIRt-6DrYTrf0Bsg"
+						><img src="ts_red.png" alt="Red Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/1KVKqWeRuXsJDLTW0VuD29?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- 1989 Album Modal -->
+		<div id="album1989Modal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>1989</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/5fy0X0JmZRZnVa2UEicIOl?si=0oOTKFWnThCy2schD7AVCQ"
+						><img src="ts_1989.png" alt="1989 Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/5fy0X0JmZRZnVa2UEicIOl?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Reputation Album Modal -->
+		<div id="reputationModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Reputation</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/6DEjYFkNZh67HP7R9PSZvv?si=dcJheZXCTaas7_YCtSb7Yg"
+						><img src="ts_reputation.png" alt="Reputation Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/6DEjYFkNZh67HP7R9PSZvv?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Lover Album Modal -->
+		<div id="loverModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Lover</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/1NAmidJlEaVgA3MpcPFYGq?si=uEdDIc3QQleTKImcIJmjrg"
+						><img src="ts_lover.png" alt="Lover Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/1NAmidJlEaVgA3MpcPFYGq?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Folklore Album Modal -->
+		<div id="folkloreModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Folklore</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2fenSS68JI1h4Fo296JfGr?si=LzSJzNtpQ0WRCHmB583rmw"
+						><img src="ts_folklore.png" alt="Folklore Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2fenSS68JI1h4Fo296JfGr?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Evermore Album Modal -->
+		<div id="evermoreModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Evermore</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2Xoteh7uEpea4TohMxjtaq?si=uE2dVvWAQHCHBORvFEPE9g"
+						><img src="ts_evermore.png" alt="Evermore Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2Xoteh7uEpea4TohMxjtaq?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Midnights Album Modal -->
+		<div id="midnightsModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Midnights</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3?si=gPN6n6tTS7KbrfZte4Zt0g"
+						><img src="ts_midnights.png" alt="Midnights Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/151w1FgRZfnKZA9FEcg9Z3?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h5>
+				Submitted by Alexa De Pano; All rights reserved &copy; 2022.
+			</h5>
+		</div>
+		<script>
+			// Taylor Swift Album Modal starts here
+			// Get the modal
+			var modalAlbum1 = document.getElementById('taylorSwiftModal');
+
+			// Get the button that opens the modal
+			var btnAlbum1 = document.getElementById('taylorSwift');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum1 = document.getElementsByClassName('close')[0];
+
+			// When the user clicks the button, open the modal
+			btnAlbum1.onclick = function () {
+				modalAlbum1.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum1.onclick = function () {
+				modalAlbum1.style.display = 'none';
+			};
+
+			// Taylor Swift Album Modal ends here
+			// ---------------------------------
+			// Fearless Album Modal starts here
+			// Get the modal
+			var modalAlbum2 = document.getElementById('fearlessModal');
+
+			// Get the button that opens the modal
+			var btnAlbum2 = document.getElementById('fearless');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum2 = document.getElementsByClassName('close')[1];
+
+			// When the user clicks the button, open the modal
+			btnAlbum2.onclick = function () {
+				modalAlbum2.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum2.onclick = function () {
+				modalAlbum2.style.display = 'none';
+			};
+
+			// Fearless Album Modal ends here
+			// ---------------------------------
+			// Speak Now Album Modal starts here
+			// Get the modal
+			var modalAlbum3 = document.getElementById('speakNowModal');
+
+			// Get the button that opens the modal
+			var btnAlbum3 = document.getElementById('speakNow');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum3 = document.getElementsByClassName('close')[2];
+
+			// When the user clicks the button, open the modal
+			btnAlbum3.onclick = function () {
+				modalAlbum3.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum3.onclick = function () {
+				modalAlbum3.style.display = 'none';
+			};
+
+			// Speak Now Album Modal ends here
+			// ---------------------------------
+			// Red Album Modal starts here
+			// Get the modal
+			var modalAlbum4 = document.getElementById('redModal');
+
+			// Get the button that opens the modal
+			var btnAlbum4 = document.getElementById('red');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum4 = document.getElementsByClassName('close')[3];
+
+			// When the user clicks the button, open the modal
+			btnAlbum4.onclick = function () {
+				modalAlbum4.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum4.onclick = function () {
+				modalAlbum4.style.display = 'none';
+			};
+
+			// Red Album Modal ends here
+			// ---------------------------------
+			// 1989 Album Modal starts here
+			// Get the modal
+			var modalAlbum5 = document.getElementById('album1989Modal');
+
+			// Get the button that opens the modal
+			var btnAlbum5 = document.getElementById('album1989');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum5 = document.getElementsByClassName('close')[4];
+
+			// When the user clicks the button, open the modal
+			btnAlbum5.onclick = function () {
+				modalAlbum5.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum5.onclick = function () {
+				modalAlbum5.style.display = 'none';
+			};
+
+			// 1989 Album Modal ends here
+			// ---------------------------------
+			// Reputation Album Modal starts here
+			// Get the modal
+			var modalAlbum6 = document.getElementById('reputationModal');
+
+			// Get the button that opens the modal
+			var btnAlbum6 = document.getElementById('reputation');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum6 = document.getElementsByClassName('close')[5];
+
+			// When the user clicks the button, open the modal
+			btnAlbum6.onclick = function () {
+				modalAlbum6.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum6.onclick = function () {
+				modalAlbum6.style.display = 'none';
+			};
+
+			// Reputation Album Modal ends here
+			// ---------------------------------
+			// Lover Album Modal starts here
+			// Get the modal
+			var modalAlbum7 = document.getElementById('loverModal');
+
+			// Get the button that opens the modal
+			var btnAlbum7 = document.getElementById('lover');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum7 = document.getElementsByClassName('close')[6];
+
+			// When the user clicks the button, open the modal
+			btnAlbum7.onclick = function () {
+				modalAlbum7.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum7.onclick = function () {
+				modalAlbum7.style.display = 'none';
+			};
+
+			// Lover Album Modal ends here
+			// ---------------------------------
+			// Folklore Album Modal starts here
+			// Get the modal
+			var modalAlbum8 = document.getElementById('folkloreModal');
+
+			// Get the button that opens the modal
+			var btnAlbum8 = document.getElementById('folklore');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum8 = document.getElementsByClassName('close')[7];
+
+			// When the user clicks the button, open the modal
+			btnAlbum8.onclick = function () {
+				modalAlbum8.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum8.onclick = function () {
+				modalAlbum8.style.display = 'none';
+			};
+
+			// Folklore Album Modal ends here
+			// ---------------------------------
+			// Evermore Album Modal starts here
+			// Get the modal
+			var modalAlbum9 = document.getElementById('evermoreModal');
+
+			// Get the button that opens the modal
+			var btnAlbum9 = document.getElementById('evermore');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum9 = document.getElementsByClassName('close')[8];
+
+			// When the user clicks the button, open the modal
+			btnAlbum9.onclick = function () {
+				modalAlbum9.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum9.onclick = function () {
+				modalAlbum9.style.display = 'none';
+			};
+
+			// Evermore Album Modal ends here
+			// ---------------------------------
+			// Midnights Album Modal starts here
+			// Get the modal
+			var modalAlbum10 = document.getElementById('midnightsModal');
+
+			// Get the button that opens the modal
+			var btnAlbum10 = document.getElementById('midnights');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum10 = document.getElementsByClassName('close')[9];
+
+			// When the user clicks the button, open the modal
+			btnAlbum10.onclick = function () {
+				modalAlbum10.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum10.onclick = function () {
+				modalAlbum10.style.display = 'none';
+			};
+
+			// Midnights Album Modal ends here
+			// ---------------------------------
+		</script>
+	</body>
+</html>

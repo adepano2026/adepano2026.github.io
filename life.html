@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+		rel="stylesheet"
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap"
+		rel="stylesheet"
+	/>
+	<style>
+		* div {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Barlow Condensed', sans-serif;
+			padding: 10px;
+			background: #f1f1f1;
+		}
+
+		.header {
+			padding: 5px;
+			text-align: center;
+			background: #f5f5f5;
+			width: 100%;
+			height: 300px;
+			background-color: #ffb8c2;
+			animation-name: example;
+			animation-duration: 60s;
+			font-family: 'Sacramento', cursive;
+		}
+
+		.header h1 {
+			color: #f5f5f5;
+		}
+		.header p {
+			color: #f5f5f5;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
+			color: #121212;
+		}
+
+		@keyframes example {
+			0% {
+				background-color: #ffd2aa;
+			}
+			25% {
+				background-color: #ffb8c2;
+			}
+			50% {
+				background-color: #c9c1e0;
+			}
+			100% {
+				background-color: #b4d2f0;
+			}
+		}
+		.header h1 {
+			font-size: 80px;
+		}
+
+		.header p {
+			font-family: 'IM Fell DW Pica', serif;
+			font-size: 25px;
+		}
+
+		.topnav {
+			overflow: hidden;
+			background-color: white;
+		}
+
+		.topnav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.topnav li {
+			float: left;
+		}
+
+		.topnav li a,
+		.dropbtn {
+			display: block;
+			color: #bf4e83;
+			text-align: left;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.active {
+			background-color: #71bbd9;
+			color: white !important;
+			cursor: pointer;
+		}
+
+		.dropdown {
+			float: left;
+			overflow: hidden;
+		}
+
+		.dropdown .dropbtn {
+			font-size: 16px;
+			border: none;
+			outline: none;
+			color: #bf4e83;
+			padding: 14px 16px;
+			background-color: inherit;
+			font-family: inherit;
+			margin: 0;
+		}
+
+		.topnav li a:hover,
+		.dropdown:hover .dropbtn {
+			background-color: #71bbd9;
+			color: white;
+			cursor: pointer;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			float: none;
+			color: #bf4e83;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #71bbd9;
+			color: #f5f5f5;
+			cursor: pointer;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0, 0, 0); /* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #f5f5f5;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+		}
+
+		/* Modal Header */
+		.modal-header {
+			padding: 2px 16px;
+			background-color: #bf4e83;
+			color: #f5f5f5;
+		}
+
+		/* Modal Body */
+		.modal-body {
+			padding: 2px 16px;
+			text-align: center;
+		}
+
+		/* The Close Button */
+		.close {
+			color: #f5f5f5;
+			float: right;
+			margin-top: 15px;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.leftcolumn {
+			float: left;
+			width: 74%;
+		}
+
+		.rightcolumn {
+			float: right;
+			width: 25%;
+			min-height: calc(100vh - 300px);
+			background: #fcd9dd;
+			padding: 0 0 0 20px;
+		}
+
+		.fakeimg {
+			background-color: #aaa;
+			width: 100%;
+			padding: 20px;
+		}
+
+		.card {
+			background-color: white;
+			margin-top: 20px;
+		}
+
+		.card h2 {
+			padding: 40px 20px 0 20px;
+			font-size: 35px;
+		}
+
+		.card p {
+			padding: 30px 120px;
+			text-align: justify;
+		}
+
+		.card a {
+			text-decoration: none;
+			color: #3c4048;
+		}
+
+		.card img {
+			width: 100%;
+		}
+
+		.card2 {
+			background-color: white;
+			margin: 30px 20px 20px 0;
+			text-align: center;
+		}
+
+		.card2 h2 {
+			padding: 40px 25px 0 25px;
+		}
+
+		.card2 img {
+			width: 90%;
+		}
+
+		.row:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.footer {
+			padding: 20px;
+			text-align: center;
+			background: white;
+		}
+
+		.footer h5 {
+			color: #bf4e83;
+		}
+
+		@media screen and (max-width: 800px) {
+			.leftcolumn,
+			.rightcolumn {
+				width: 100%;
+				padding: 0;
+			}
+		}
+
+		@media screen and (max-width: 400px) {
+			.topnav a {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.spotifyCss {
+			border-radius: 12px;
+		}
+	</style>
+	<body>
+		<div class="header">
+			<h1>Taylor Swift</h1>
+			<p>...Ready for it?</p>
+		</div>
+
+		<div class="topnav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="dropdown">
+					<a class="dropbtn">
+						Albums
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<div class="dropdown-content">
+						<a href="#" id="taylorSwift">Taylor Swift</a>
+						<a href="#" id="fearless">Fearless</a>
+						<a href="#" id="speakNow">Speak Now</a>
+						<a href="#" id="red">Red</a>
+						<a href="#" id="album1989">1989</a>
+						<a href="#" id="reputation">Reputation</a>
+						<a href="#" id="lover">Lover</a>
+						<a href="#" id="folklore">Folklore</a>
+						<a href="#" id="evermore">Evermore</a>
+						<a href="#" id="midnights">Midnights</a>
+					</div>
+				</li>
+				<li><a href="awards.html">Awards</a></li>
+				<li><a href="#" class="active">Life</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="leftcolumn">
+				<div class="card">
+					<h2>Life of Taylor Swift</h2>
+					<p>
+						Taylor Swift, in full Taylor Alison Swift, (born
+						December 13, 1989, West Reading, Pennsylvania, U.S.),
+						American pop and country music singer-songwriter whose
+						tales of young heartache achieved widespread success in
+						the early 21st century.
+						<br /><br />
+
+						<strong>Early life</strong><br />
+						Swift showed an interest in music at an early age, and
+						she progressed quickly from roles in children's theatre
+						to her first appearance before a crowd of thousands. She
+						was age 11 when she sang “The Star-Spangled Banner”
+						before a Philadelphia 76ers basketball game, and the
+						following year she picked up the guitar and began to
+						write songs. Taking her inspiration from country music
+						artists such as Shania Twain and the Dixie Chicks, Swift
+						crafted original material that reflected her experiences
+						of tween alienation. When she was 13, Swift's parents
+						sold their farm in Pennsylvania to move to
+						Hendersonville, Tennessee, so that she could devote more
+						of her time to courting country labels in nearby
+						Nashville.
+						<br /><br />
+
+						A development deal with RCA Records allowed Swift to
+						make the acquaintance of recording-industry veterans,
+						and in 2004, at age 14, she signed with Sony/ATV as a
+						songwriter. At venues in the Nashville area, she
+						performed many of the songs she had written, and it was
+						at one such performance that she was noticed by record
+						executive Scott Borchetta. Borchetta signed Swift to his
+						fledgling Big Machine label, and her first single, “Tim
+						McGraw” (inspired by and prominently referencing a song
+						by Swift's favourite country artist), was released in
+						the summer of 2006.
+						<br /><br />
+
+						<strong>Debut album and Fearless</strong><br />
+						The song was an immediate success, spending eight months
+						on the Billboard country singles chart. Now age 16,
+						Swift followed with a self-titled debut album, and she
+						went on tour, opening for Rascal Flatts. Taylor Swift
+						was certified platinum in 2007, having sold more than
+						one million copies in the United States, and Swift
+						continued a rigorous touring schedule, opening for
+						artists such as George Strait, Kenny Chesney, Tim
+						McGraw, and Faith Hill. That November Swift received the
+						Horizon Award for best new artist from the Country Music
+						Association (CMA), capping the year in which she emerged
+						as country music's most-visible young star.
+						<br /><br />
+
+						On Swift's second album, Fearless (2008), she
+						demonstrated a refined pop sensibility, managing to
+						court the mainstream pop audience without losing sight
+						of her country roots. With sales of more than half a
+						million copies in its first week, Fearless opened at
+						number one on the Billboard 200 chart. It ultimately
+						spent more time atop that chart than any other album
+						released that decade. Singles such as “You Belong with
+						Me” and “Love Story” were popular in the digital market
+						as well, the latter accounting for more than four
+						million paid downloads.
+						<br /><br />
+
+						<strong
+							>Kanye West incident at the VMAs, Red, and
+							1989</strong
+						><br />
+						In 2009 Swift embarked on her first tour as a headliner,
+						playing to sold-out venues across North America. That
+						year also saw Swift dominate the industry award circuit.
+						Fearless was recognized as album of the year by the
+						Academy of Country Music in April, and she topped the
+						best female video category for “You Belong with Me” at
+						the MTV Video Music Awards (VMAs) in September. During
+						her VMA acceptance speech, Swift was interrupted by
+						rapper Kanye West, who protested that the award should
+						have gone to Beyoncé for what he called “one of the best
+						videos of all time.” Later in the program, when Beyoncé
+						was accepting the award for video of the year, she
+						invited Swift onstage to conclude her speech, a move
+						that drew a standing ovation for both performers. At the
+						CMA Awards that November, Swift won all four categories
+						in which she was nominated. Her recognition as CMA
+						entertainer of the year made her the youngest-ever
+						winner of that award, as well as the first female solo
+						artist to win since 1999. She began 2010 with an
+						impressive showing at the Grammy Awards, where she
+						collected four honours, including best country song,
+						best country album, and the top prize of album of the
+						year.
+						<br /><br />
+
+						Later that year Swift made her feature-film debut in the
+						romantic comedy Valentine's Day and was named the new
+						spokesperson for CoverGirl cosmetics. Although Swift
+						avoided discussing her personal life in interviews, she
+						was surprisingly frank in her music. Her third album,
+						Speak Now (2010), was littered with allusions to
+						romantic relationships with John Mayer, Joe Jonas of the
+						Jonas Brothers, and Twilight series actor Taylor
+						Lautner. Swift reclaimed the CMA entertainer of the year
+						award in 2011, and the following year she won Grammys
+						for best country solo performance and best country song
+						for “Mean,” a single from Speak Now.
+						<br /><br />
+
+						Swift continued her acting career with a voice role in
+						the animated Dr. Seuss' The Lorax (2012) before
+						releasing her next collection of songs, Red (2012).
+						While she remained focused on the vagaries of young
+						love, her songwriting reflected a deepened perspective
+						on the subject, and much of the album embraced a bold
+						pop-rock sound. In its first week on sale in the United
+						States, Red sold 1.2 million copies—the highest one-week
+						total in 10 years. In addition, its lead single, the
+						gleeful “We Are Never Ever Getting Back Together,” gave
+						Swift her first number-one hit on the Billboard pop
+						singles chart.
+						<br /><br />
+
+						In 2014 Swift released 1989, an album titled after the
+						year of her birth and reportedly inspired by the music
+						of that era. Although Swift had already been steadily
+						moving away from the traditional country signifiers that
+						marked her early work—“I Knew You Were Trouble,” the
+						second single from Red, even flirted with electronic
+						dance music—she called 1989 her first “official pop
+						album.” On the strength of the upbeat “Shake It Off,”
+						the album proved to be another blockbuster for Swift,
+						with its first-week sales surpassing those of Red. It
+						went on to sell more than five million copies in the
+						United States and earned Swift her second Grammy for
+						album of the year. In 2014 Swift also appeared in a
+						supporting role in The Giver, a film adaptation of Lois
+						Lowry's dystopian novel for young readers.
+						<br /><br />
+
+						<strong>Later albums and controversies</strong><br />
+						In 2016 Swift's feud with Kanye West resumed after he
+						released the single “Famous.” The song included a lyric
+						in which Swift was referred to as a “bitch,” and she
+						alleged that it was misogynistic. The public spat
+						escalated after West's wife, Kim Kardashian, released a
+						recording of a phone call in which Swift gave her
+						approval for the line, though West made no mention of
+						calling her a bitch. Swift's controversies continued as
+						she took part in a widely publicized civil trial in
+						August 2017, after former radio host David Mueller sued
+						the singer, her mother, and a promoter, claiming that
+						Swift had falsely accused him of sexually groping her in
+						2013 during the taking of a photograph and thus
+						destroyed his career. She countersued, maintaining that
+						the assault had taken place. At the trial, Swift was
+						removed from Mueller's suit and the other two defendants
+						were found not liable as the jury found in favour of
+						Swift's countersuit. Shortly thereafter Swift released
+						the hit song “Look What You Made Me Do,” and her album
+						Reputation became the top-selling American LP of 2017.
+						<br /><br />
+
+						In 2018 Swift left Big Machine and signed with Republic
+						Records and Universal Music Group. The following year
+						her former label, which owned the master recordings of
+						her six albums, was sold to Scooter Braun, a talent
+						manager whose clients had included Kanye West. Swift
+						publicly spoke out against the deal, claiming that
+						Borchetta had rejected her attempts to acquire the
+						master tapes and that Braun had bullied her over the
+						years. She subsequently tried to negotiate a deal with
+						Braun, but he sold her back catalog to a private
+						investment firm in 2020. Against this backdrop, Swift
+						began rerecording her early material in an effort to
+						gain control of it—the hope being that her remade songs
+						and not the originals would be sought out for licensing
+						deals—and in 2021 Fearless (Taylor's Version) and Red
+						(Taylor's Version) appeared. They were remakes of
+						earlier albums with several previously unreleased
+						tracks.
+						<br /><br />
+
+						In 2019 Swift released her seventh album, Lover, which
+						she described as “a love letter to love itself.” That
+						year she also appeared in the musical Cats, a film
+						adaptation of Andrew Lloyd Webber's hugely successful
+						stage production. Miss Americana (2020) is a documentary
+						about her life and career. With little advance notice,
+						she released folklore in 2020. A departure from her
+						previous pop-inspired work, Swift's eighth studio album
+						drew praise for its introspection and restraint, and it
+						won the Grammy for album of the year. The “sister
+						record,” ,Evermore appeared later in 2020. Swift adopted
+						a synth-pop sound for the candid Midnights (2022), which
+						she described as “the story of 13 sleepless nights
+						scattered throughout my life.”
+						<br /><br /><br /><br />
+
+						<a
+							href="https://www.britannica.com/biography/Taylor-Swift"
+							><strong>View Source</strong></a
+						>
+					</p>
+				</div>
+			</div>
+			<div class="rightcolumn">
+				<div class="card2">
+					<h2>Merch Store</h2>
+					<a href="https://store.taylorswift.com/"
+						><img
+							src="ts_merchstore.png"
+							alt="Taylor Swift merch store"
+					/></a>
+					<br /><br />
+				</div>
+				<div class="card2">
+					<h2>Digital Booklet</h2>
+					<a href="https://digital.umusic.com/taylorswiftmidnights"
+						><img
+							src="ts_midnightsbooklet.jpg"
+							alt="Taylor Swift merch store"
+					/></a>
+
+					<p>.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Taylor Swift Album Modal -->
+		<div id="taylorSwiftModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Taylor Swift (Self-titled)</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/5eyZZoQEFQWRHkV2xgAeBw?si=Q10WE6kVT--i2IJW-4nZAQ"
+						><img
+							src="ts_selftitled.png"
+							alt="Taylor Swift (Self-titled) Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/5eyZZoQEFQWRHkV2xgAeBw?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fearless Album Modal -->
+		<div id="fearlessModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Fearless</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2gP2LMVcIFgVczSJqn340t?si=m-I9Of5hTByVL0EQ5PeCLA"
+						><img src="ts_fearless.png" alt="Fearless Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2gP2LMVcIFgVczSJqn340t?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Speak Now Album Modal -->
+		<div id="speakNowModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Speak Now</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/6S6JQWzUrJVcJLK4fi74Fw?si=S22sxdbkRiK3UlL3NFGMdQ"
+						><img src="ts_speaknow.png" alt="Speak Now Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/6S6JQWzUrJVcJLK4fi74Fw?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Red Album Modal -->
+		<div id="redModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Red</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/1KVKqWeRuXsJDLTW0VuD29?si=dbjhGSnIRt-6DrYTrf0Bsg"
+						><img src="ts_red.png" alt="Red Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/1KVKqWeRuXsJDLTW0VuD29?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- 1989 Album Modal -->
+		<div id="album1989Modal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>1989</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/5fy0X0JmZRZnVa2UEicIOl?si=0oOTKFWnThCy2schD7AVCQ"
+						><img src="ts_1989.png" alt="1989 Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/5fy0X0JmZRZnVa2UEicIOl?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Reputation Album Modal -->
+		<div id="reputationModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Reputation</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/6DEjYFkNZh67HP7R9PSZvv?si=dcJheZXCTaas7_YCtSb7Yg"
+						><img src="ts_reputation.png" alt="Reputation Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/6DEjYFkNZh67HP7R9PSZvv?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Lover Album Modal -->
+		<div id="loverModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Lover</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/1NAmidJlEaVgA3MpcPFYGq?si=uEdDIc3QQleTKImcIJmjrg"
+						><img src="ts_lover.png" alt="Lover Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/1NAmidJlEaVgA3MpcPFYGq?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Folklore Album Modal -->
+		<div id="folkloreModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Folklore</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2fenSS68JI1h4Fo296JfGr?si=LzSJzNtpQ0WRCHmB583rmw"
+						><img src="ts_folklore.png" alt="Folklore Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2fenSS68JI1h4Fo296JfGr?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Evermore Album Modal -->
+		<div id="evermoreModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Evermore</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/2Xoteh7uEpea4TohMxjtaq?si=uE2dVvWAQHCHBORvFEPE9g"
+						><img src="ts_evermore.png" alt="Evermore Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/2Xoteh7uEpea4TohMxjtaq?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- Midnights Album Modal -->
+		<div id="midnightsModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Midnights</h2>
+				</div>
+				<div class="modal-body">
+					<a
+						href="https://open.spotify.com/album/151w1FgRZfnKZA9FEcg9Z3?si=gPN6n6tTS7KbrfZte4Zt0g"
+						><img src="ts_midnights.png" alt="Midnights Album"
+					/></a>
+					<iframe
+						class="spotifyCss"
+						src="https://open.spotify.com/embed/album/151w1FgRZfnKZA9FEcg9Z3?utm_source=generator"
+						width="100%"
+						height="380"
+						frameborder="0"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<h5>
+				Submitted by Alexa De Pano; All rights reserved &copy; 2022.
+			</h5>
+		</div>
+		<script>
+			// Taylor Swift Album Modal starts here
+			// Get the modal
+			var modalAlbum1 = document.getElementById('taylorSwiftModal');
+
+			// Get the button that opens the modal
+			var btnAlbum1 = document.getElementById('taylorSwift');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum1 = document.getElementsByClassName('close')[0];
+
+			// When the user clicks the button, open the modal
+			btnAlbum1.onclick = function () {
+				modalAlbum1.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum1.onclick = function () {
+				modalAlbum1.style.display = 'none';
+			};
+
+			// Taylor Swift Album Modal ends here
+			// ---------------------------------
+			// Fearless Album Modal starts here
+			// Get the modal
+			var modalAlbum2 = document.getElementById('fearlessModal');
+
+			// Get the button that opens the modal
+			var btnAlbum2 = document.getElementById('fearless');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum2 = document.getElementsByClassName('close')[1];
+
+			// When the user clicks the button, open the modal
+			btnAlbum2.onclick = function () {
+				modalAlbum2.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum2.onclick = function () {
+				modalAlbum2.style.display = 'none';
+			};
+
+			// Fearless Album Modal ends here
+			// ---------------------------------
+			// Speak Now Album Modal starts here
+			// Get the modal
+			var modalAlbum3 = document.getElementById('speakNowModal');
+
+			// Get the button that opens the modal
+			var btnAlbum3 = document.getElementById('speakNow');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum3 = document.getElementsByClassName('close')[2];
+
+			// When the user clicks the button, open the modal
+			btnAlbum3.onclick = function () {
+				modalAlbum3.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum3.onclick = function () {
+				modalAlbum3.style.display = 'none';
+			};
+
+			// Speak Now Album Modal ends here
+			// ---------------------------------
+			// Red Album Modal starts here
+			// Get the modal
+			var modalAlbum4 = document.getElementById('redModal');
+
+			// Get the button that opens the modal
+			var btnAlbum4 = document.getElementById('red');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum4 = document.getElementsByClassName('close')[3];
+
+			// When the user clicks the button, open the modal
+			btnAlbum4.onclick = function () {
+				modalAlbum4.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum4.onclick = function () {
+				modalAlbum4.style.display = 'none';
+			};
+
+			// Red Album Modal ends here
+			// ---------------------------------
+			// 1989 Album Modal starts here
+			// Get the modal
+			var modalAlbum5 = document.getElementById('album1989Modal');
+
+			// Get the button that opens the modal
+			var btnAlbum5 = document.getElementById('album1989');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum5 = document.getElementsByClassName('close')[4];
+
+			// When the user clicks the button, open the modal
+			btnAlbum5.onclick = function () {
+				modalAlbum5.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum5.onclick = function () {
+				modalAlbum5.style.display = 'none';
+			};
+
+			// 1989 Album Modal ends here
+			// ---------------------------------
+			// Reputation Album Modal starts here
+			// Get the modal
+			var modalAlbum6 = document.getElementById('reputationModal');
+
+			// Get the button that opens the modal
+			var btnAlbum6 = document.getElementById('reputation');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum6 = document.getElementsByClassName('close')[5];
+
+			// When the user clicks the button, open the modal
+			btnAlbum6.onclick = function () {
+				modalAlbum6.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum6.onclick = function () {
+				modalAlbum6.style.display = 'none';
+			};
+
+			// Reputation Album Modal ends here
+			// ---------------------------------
+			// Lover Album Modal starts here
+			// Get the modal
+			var modalAlbum7 = document.getElementById('loverModal');
+
+			// Get the button that opens the modal
+			var btnAlbum7 = document.getElementById('lover');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum7 = document.getElementsByClassName('close')[6];
+
+			// When the user clicks the button, open the modal
+			btnAlbum7.onclick = function () {
+				modalAlbum7.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum7.onclick = function () {
+				modalAlbum7.style.display = 'none';
+			};
+
+			// Lover Album Modal ends here
+			// ---------------------------------
+			// Folklore Album Modal starts here
+			// Get the modal
+			var modalAlbum8 = document.getElementById('folkloreModal');
+
+			// Get the button that opens the modal
+			var btnAlbum8 = document.getElementById('folklore');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum8 = document.getElementsByClassName('close')[7];
+
+			// When the user clicks the button, open the modal
+			btnAlbum8.onclick = function () {
+				modalAlbum8.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum8.onclick = function () {
+				modalAlbum8.style.display = 'none';
+			};
+
+			// Folklore Album Modal ends here
+			// ---------------------------------
+			// Evermore Album Modal starts here
+			// Get the modal
+			var modalAlbum9 = document.getElementById('evermoreModal');
+
+			// Get the button that opens the modal
+			var btnAlbum9 = document.getElementById('evermore');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum9 = document.getElementsByClassName('close')[8];
+
+			// When the user clicks the button, open the modal
+			btnAlbum9.onclick = function () {
+				modalAlbum9.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum9.onclick = function () {
+				modalAlbum9.style.display = 'none';
+			};
+
+			// Evermore Album Modal ends here
+			// ---------------------------------
+			// Midnights Album Modal starts here
+			// Get the modal
+			var modalAlbum10 = document.getElementById('midnightsModal');
+
+			// Get the button that opens the modal
+			var btnAlbum10 = document.getElementById('midnights');
+
+			// Get the <span> element that closes the modal
+			var spanAlbum10 = document.getElementsByClassName('close')[9];
+
+			// When the user clicks the button, open the modal
+			btnAlbum10.onclick = function () {
+				modalAlbum10.style.display = 'block';
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			spanAlbum10.onclick = function () {
+				modalAlbum10.style.display = 'none';
+			};
+
+			// Midnights Album Modal ends here
+			// ---------------------------------
+		</script>
+	</body>
+</html>
